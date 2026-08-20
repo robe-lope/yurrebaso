@@ -454,9 +454,10 @@ section h2 {
 }
 
 .contacto__inner {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 560px;
 }
 
 .contacto__info > p {
@@ -468,6 +469,7 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  width: 100%;
 }
 
 .contacto__datos li {
@@ -486,48 +488,8 @@ section h2 {
   color: var(--accent);
 }
 
-.form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.form__field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form__field label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-.form__field input,
-.form__field textarea {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 12px 14px;
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  resize: vertical;
-}
-
-.form__field input:focus,
-.form__field textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-
-.form__submit {
-  margin-top: 8px;
+.contacto__cta {
+  margin-top: 32px;
 }
 
 /* ==========================================================================
@@ -618,8 +580,7 @@ section h2 {
 
 @media (max-width: 900px) {
   .hero__inner,
-  .nosotros__inner,
-  .contacto__inner {
+  .nosotros__inner {
     grid-template-columns: 1fr;
   }
 
