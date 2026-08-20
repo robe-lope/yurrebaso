@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(curl -sI http://localhost:8080/index.html)",
-      "Bash(\"/c/Users/EZEQUIEL/AppData/Local/Programs/Python/Python311/python\" -m http.server 8080)",
-      "Skill(claude-in-chrome)"
-    ]
-  }
-}
