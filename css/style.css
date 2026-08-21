@@ -1,16 +1,21 @@
 /* ==========================================================================
-   Yurrebaso Diesel Inyección — Paleta Verde
+   Yurrebaso Diesel Inyección — Paleta Bosch oficial
+   Secundario: azul (navbar + botones) · Terciario: rojo (acentos puntuales)
    ========================================================================== */
 
 :root {
-  --bg: #0F0F0D;
-  --bg-alt: #17170F;
-  --surface: #1C1C15;
-  --border: #2C2C22;
-  --accent: #7AAD00;
-  --accent-dark: #628A00;
-  --text: #F2F2ED;
-  --text-muted: #A8A89C;
+  --bg: #FFFFFF;
+  --bg-alt: #F5F5F5;
+  --surface: #FAFAFA;
+  --border: #E3E3E3;
+
+  --secondary: #006EAD;
+  --secondary-dark: #003253;
+  --tertiary: #E2001A;
+  --on-brand: #FFFFFF;
+
+  --text: #1A1A1A;
+  --text-muted: #6B6B6B;
 
   --font-head: "Barlow Condensed", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -68,7 +73,7 @@ h1, h2, h3 {
 
 .eyebrow {
   display: inline-block;
-  color: var(--accent);
+  color: var(--secondary);
   font-family: var(--font-head);
   font-weight: 700;
   text-transform: uppercase;
@@ -101,12 +106,12 @@ section h2 {
 }
 
 .btn--primary {
-  background: var(--accent);
-  color: #0F0F0D;
+  background: var(--secondary);
+  color: var(--on-brand);
 }
 
 .btn--primary:hover {
-  background: var(--accent-dark);
+  background: var(--secondary-dark);
   transform: translateY(-1px);
 }
 
@@ -116,8 +121,8 @@ section h2 {
 }
 
 .btn--ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--secondary);
+  color: var(--secondary);
 }
 
 /* ==========================================================================
@@ -130,9 +135,8 @@ section h2 {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(15, 15, 13, 0.92);
+  background: rgba(0, 50, 83, 0.96);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
 }
 
 .nav__inner {
@@ -147,11 +151,12 @@ section h2 {
   font-weight: 800;
   font-size: 1.4rem;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--on-brand);
 }
 
 .nav__logo span {
-  color: var(--accent);
+  color: var(--on-brand);
+  opacity: 0.85;
 }
 
 .nav__links {
@@ -162,12 +167,16 @@ section h2 {
 .nav__links a {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-muted);
-  transition: color 0.2s ease;
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 .nav__links a:hover {
-  color: var(--accent);
+  color: var(--on-brand);
+  text-decoration-color: var(--tertiary);
 }
 
 .nav__cta {
@@ -189,7 +198,7 @@ section h2 {
 .nav__toggle span {
   display: block;
   height: 2px;
-  background: var(--text);
+  background: var(--on-brand);
   border-radius: 2px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -213,7 +222,7 @@ section h2 {
 .hero {
   padding: 160px 0 100px;
   background:
-    radial-gradient(circle at 80% 20%, rgba(122, 173, 0, 0.16), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(0, 110, 173, 0.07), transparent 55%),
     var(--bg);
 }
 
@@ -233,8 +242,8 @@ section h2 {
 .badge {
   display: inline-block;
   padding: 6px 14px;
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
   border-radius: 999px;
   font-size: 0.78rem;
   font-weight: 600;
@@ -304,7 +313,7 @@ section h2 {
   font-family: var(--font-head);
   font-weight: 800;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 .stat__label {
@@ -335,12 +344,12 @@ section h2 {
 }
 
 .card:hover {
-  border-color: var(--accent);
+  border-color: var(--secondary);
   transform: translateY(-3px);
 }
 
 .card__icon {
-  color: var(--accent);
+  color: var(--tertiary);
   font-size: 1.4rem;
   margin-bottom: 16px;
 }
@@ -399,7 +408,7 @@ section h2 {
   top: 8px;
   width: 10px;
   height: 10px;
-  background: var(--accent);
+  background: var(--tertiary);
 }
 
 .nosotros__visual {
@@ -407,7 +416,7 @@ section h2 {
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background:
-    repeating-linear-gradient(45deg, rgba(122, 173, 0, 0.08) 0 2px, transparent 2px 18px),
+    repeating-linear-gradient(45deg, rgba(0, 110, 173, 0.06) 0 2px, transparent 2px 18px),
     var(--surface);
 }
 
@@ -427,7 +436,7 @@ section h2 {
 
 .equipo {
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--secondary);
   border-radius: var(--radius);
   padding: 24px 28px;
   background: var(--surface);
@@ -485,7 +494,7 @@ section h2 {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: 0.8rem;
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 .contacto__cta {
@@ -517,7 +526,7 @@ section h2 {
 }
 
 .footer__logo span {
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 .footer__brand p {
@@ -537,7 +546,7 @@ section h2 {
 }
 
 .footer__links a:hover {
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 .footer__copy {
@@ -560,12 +569,12 @@ section h2 {
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: var(--accent);
-  color: #0F0F0D;
+  background: var(--tertiary);
+  color: var(--on-brand);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
   z-index: 90;
   transition: transform 0.2s ease;
 }
@@ -632,8 +641,7 @@ section h2 {
     left: 0;
     right: 0;
     flex-direction: column;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
+    background: var(--secondary-dark);
     padding: 20px 24px;
     gap: 18px;
   }
